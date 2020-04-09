@@ -140,7 +140,7 @@ public class Graphics extends Canvas implements Runnable {
         @Override
         public void keyPressed(KeyEvent keyEvent) {
             paddle.keyPressed(keyEvent);
-            paddle2.keyReleased(keyEvent);
+            paddle2.keyPressed(keyEvent);
         }
 
         @Override
