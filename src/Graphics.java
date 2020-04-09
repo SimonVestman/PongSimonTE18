@@ -30,8 +30,9 @@ public class Graphics extends Canvas implements Runnable {
     private int ups = 60;
 
     private Ball b;
-    private Paddle paddle;
     private Paddle paddle2;
+    private Paddle paddle;
+
 
     public Graphics(int w, int h, int scale) {
         this.width = w;

@@ -81,15 +81,17 @@ public class Ball {
         boundingBox.x += xDirection;
         boundingBox.y += yDirection;
         System.out.println();
-        //Bounce the ball when edge is detected
+        //Bounce the ball when edge is detected and reset if ball touches right and left wall
         if (boundingBox.x <= 0) {
-            setXDirection(+1);
+            boundingBox.x = 250;
+            boundingBox.y = 200;
         }
         if (boundingBox.x >= 385) {
-            setXDirection(-1);
+            boundingBox.x = 250;
+            boundingBox.y = 200;
         }
         if (boundingBox.y <= 0) setYDirection(+1);
-        if (boundingBox.y >= 285) setYDirection(-1);
+        if (boundingBox.y >= 390) setYDirection(-1);
     }
 
     public void update(Rectangle r) {
