@@ -30,7 +30,7 @@ public class Graphics extends Canvas implements Runnable {
     private int ups = 60;
 
     private Ball b;
-    private Paddle paddle2;
+    private Paddle2 paddle2;
     private Paddle paddle;
 
 
@@ -57,7 +57,7 @@ public class Graphics extends Canvas implements Runnable {
 
         b = new Ball(200,100);
         paddle = new Paddle(0,0,0xFFFF0000);
-        paddle2 = new Paddle(0,0,0xFFFF0000);
+        paddle2 = new Paddle2(0,0,0xFFFF0000);
     }
 
     private void draw() {

@@ -86,7 +86,7 @@ public class Ball {
             boundingBox.x = 250;
             boundingBox.y = 200;
         }
-        if (boundingBox.x >= 385) {
+        if (boundingBox.x >= 492) {
             boundingBox.x = 250;
             boundingBox.y = 200;
         }

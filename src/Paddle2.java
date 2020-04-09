@@ -15,7 +15,7 @@ public class Paddle2 {
         pixels = new int[width*height];
         for (int i = 0 ; i < pixels.length ; i++) {
             pixels[i] = col;
-            boundingBox.x = 300;
+            boundingBox.x = 500;
         }
     }
 
@@ -55,15 +55,15 @@ public class Paddle2 {
         if(boundingBox.x <= 0) {
             boundingBox.x = 0;
         }
-        if(boundingBox.x >= 380) {
-            boundingBox.x = 380;
+        if(boundingBox.x >= 480) {
+            boundingBox.x = 480;
         }
         boundingBox.y += yDirection;
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 280) {
-            boundingBox.y = 280;
+        if(boundingBox.y >= 340) {
+            boundingBox.y = 340;
         }
     }
 
