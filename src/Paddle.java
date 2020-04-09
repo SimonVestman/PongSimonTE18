@@ -7,8 +7,8 @@ public class Paddle {
     private int yDirection;
     private int[] pixels;
     private Rectangle boundingBox;
-    private int width = 10;
-    private int height = 60;
+    private int width = 8;
+    private int height = 65;
 
     public Paddle(int x, int y, int col){
         boundingBox = new Rectangle(x, y, width, height);
@@ -21,10 +21,10 @@ public class Paddle {
 
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == e.VK_UP){
-            setYDirection(-2);
+            setYDirection(-3);
         }
         if(e.getKeyCode() == e.VK_DOWN){
-            setYDirection(2);
+            setYDirection(3);
         }
     }
 
@@ -62,8 +62,8 @@ public class Paddle {
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 340) {
-            boundingBox.y = 340;
+        if(boundingBox.y >= 335) {
+            boundingBox.y = 335;
         }
     }
 
