@@ -87,14 +87,16 @@ public class Ball {
         if (boundingBox.x <= 0) {
             boundingBox.x = 250;
             boundingBox.y = 200;
+            setXDirection(+1);
             p1Score++;
             System.out.println(p1Score);
         }
         if (boundingBox.x >= 492) {
             boundingBox.x = 250;
             boundingBox.y = 200;
+            setXDirection(-1);
             p2Score++;
-            System.out.println(p2Score);
+            System.out.println("p2score" + p2Score);
         }
         if (boundingBox.y <= 0) setYDirection(+1);
         if (boundingBox.y >= 390) setYDirection(-1);

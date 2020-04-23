@@ -18,21 +18,20 @@ public class Paddle2 {
             boundingBox.x = 500;
         }
     }
-
     public void keyPressed(KeyEvent e){
-        if(e.getKeyChar() == 'w'){
+        if(e.getKeyCode() == e.VK_UP){
             setYDirection(-3);
         }
-        if(e.getKeyChar() == 's'){
+        if(e.getKeyCode() == e.VK_DOWN){
             setYDirection(3);
         }
     }
 
     public void keyReleased(KeyEvent e){
-        if(e.getKeyChar() == 's'){
+        if(e.getKeyCode() == e.VK_UP){
             setYDirection(0);
         }
-        if(e.getKeyChar() == 'w'){
+        if(e.getKeyCode() == e.VK_DOWN){
             setYDirection(0);
         }
 
