@@ -8,8 +8,8 @@ public class Ball {
     private Rectangle boundingBox;
     private int height = 10;
     private int width = 10;
-    public int p1Score;
-    public int p2Score;
+    private int p1Score;
+    private int p2Score;
 
     public Ball(int x, int y){
         pixels = new int[width*height];
@@ -89,7 +89,7 @@ public class Ball {
             boundingBox.y = 200;
             setXDirection(+1);
             p1Score++;
-            System.out.println(p1Score);
+            System.out.println("p1score" + p1Score);
         }
         if (boundingBox.x >= 492) {
             boundingBox.x = 250;
@@ -100,6 +100,23 @@ public class Ball {
         }
         if (boundingBox.y <= 0) setYDirection(+1);
         if (boundingBox.y >= 390) setYDirection(-1);
+    }
+
+
+    public int getP1Score() {
+        return p1Score;
+    }
+
+    public int getP2Score() {
+        return p2Score;
+    }
+
+    public void setP1Score(int p1Score) {
+        this.p1Score = p1Score;
+    }
+
+    public void setP2Score(int p2Score) {
+        this.p2Score = p2Score;
     }
 
     public void update(Rectangle r) {

@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -172,6 +169,44 @@ public class Graphics extends Canvas implements Runnable {
 
         @Override
         public void mouseExited(MouseEvent mouseEvent) {
+        }
+    }
+
+    private class Mywindowlistner implements WindowListener{
+
+        @Override
+        public void windowOpened(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowClosing(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowClosed(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowIconified(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowDeiconified(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowActivated(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowDeactivated(WindowEvent windowEvent) {
+
         }
     }
 }
