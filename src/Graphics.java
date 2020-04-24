@@ -144,6 +144,7 @@ public class Graphics extends Canvas implements Runnable {
         public void keyReleased(KeyEvent keyEvent) {
             paddle.keyReleased(keyEvent);
             paddle2.keyReleased(keyEvent);
+            b.keyReleased(keyEvent);
         }
 
 
@@ -172,42 +173,5 @@ public class Graphics extends Canvas implements Runnable {
         }
     }
 
-    private class Mywindowlistner implements WindowListener{
-
-        @Override
-        public void windowOpened(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowClosing(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowClosed(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowIconified(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowDeiconified(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowActivated(WindowEvent windowEvent) {
-
-        }
-
-        @Override
-        public void windowDeactivated(WindowEvent windowEvent) {
-
-        }
-    }
 }
 
