@@ -133,15 +133,24 @@ public class Ball {
     }
 
     public void keyReleased(KeyEvent keyEvent) {
-        int max = 2;
-        int min = 1;
-        int range = max - min -2;
+        int maxY = 1;
+        int minY = -1;
+        int rangeY = maxY - minY + 1;
+
+        int maxX = maxY;
+        int minX = minY;
+        int rangeX = maxX - minX + 1;
 
         if (keyEvent.getKeyCode() == keyEvent.VK_SPACE) {
-            for (int i = 1; i < 3; i++) {
-                int rand = (int) (Math.random() * range) + min;
-                setYDirection(rand);
-                setXDirection(rand);
+            for (int i = -1; i < 1; i++) {
+                    int randY = (int) (Math.random() * rangeY) + minY;
+                    int randX = (int) (Math.random() * rangeX) + minY;
+                if (randY != 0){
+                    setYDirection(randY);
+                }
+                if (randX != 0){
+                    setXDirection(randX);
+                }
             }
         }
     }
