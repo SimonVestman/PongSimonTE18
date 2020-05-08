@@ -5,7 +5,7 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class Ball {
-    private int xDirection, yDirection;
+    private double xDirection, yDirection;
     private int[] pixels;
     private Rectangle boundingBox;
     private int height = 10;
@@ -43,19 +43,19 @@ public class Ball {
         setYDirection(yrDir);
     }
 
-    public void setXDirection(int xdir) {
+    public void setXDirection(double xdir) {
         xDirection = xdir;
     }
 
-    public void setYDirection(int ydir) {
+    public void setYDirection(double ydir) {
         yDirection = ydir;
     }
 
-    public int getXDirection() {
+    public double getXDirection() {
         return xDirection;
     }
 
-    public int getYDirection() {
+    public double getYDirection() {
         return yDirection;
     }
 
@@ -70,13 +70,13 @@ public class Ball {
     public void collision(Rectangle r) {
         if (boundingBox.intersects(r)) {
             if (getXDirection() > 0 && Math.abs(r.x - (boundingBox.x + boundingBox.width)) <= getXDirection()) {
-                setXDirection(-1);
+                setXDirection(-2);
             } else if (getXDirection() < 0 && Math.abs(r.x + r.width - boundingBox.x) <= -getXDirection()) {
-                setXDirection(+1);
+                setXDirection(+2);
             } else if (getYDirection() > 0 && Math.abs(r.y - (boundingBox.y + boundingBox.height)) <= getYDirection()) {
-                setYDirection(-1);
+                setYDirection(-2);
             } else if (getYDirection() < 0 && Math.abs(r.y + r.height - boundingBox.y) <= -getYDirection()) {
-                setYDirection(1);
+                setYDirection(+2);
             }
         }
     }
@@ -105,8 +105,8 @@ public class Ball {
             JOptionPane.showMessageDialog(null, "PLAYER 1 SCORE:" + p1Score +
                     "\n" + "PLAYER 2 SCORE:" + p2Score);
         }
-        if (boundingBox.y <= 0) setYDirection(+1);
-        if (boundingBox.y >= 390) setYDirection(-1);
+        if (boundingBox.y <= 0) setYDirection(+2);
+        if (boundingBox.y >= 390) setYDirection(-2);
     }
 
 
@@ -133,25 +133,18 @@ public class Ball {
     }
 
     public void keyReleased(KeyEvent keyEvent) {
-        int maxY = 1;
-        int minY = -1;
-        int rangeY = maxY - minY + 1;
 
-        int maxX = maxY;
-        int minX = minY;
-        int rangeX = maxX - minX + 1;
+        int negativY = -2;
+        int positivY = +2;
+        int negativX = -2;
+        int positivX = +2;
 
         if (keyEvent.getKeyCode() == keyEvent.VK_SPACE) {
-            for (int i = -1; i < 1; i++) {
-                    int randY = (int) (Math.random() * rangeY) + minY;
-                    int randX = (int) (Math.random() * rangeX) + minY;
-                if (randY != 0){
-                    setYDirection(randY);
-                }
-                if (randX != 0){
-                    setXDirection(randX);
-                }
-            }
+            int randomDerX = new Random().nextBoolean() ? negativX : positivX;
+                setXDirection(randomDerX);
+
+            int randomDerY = new Random().nextBoolean() ? negativY : positivY;
+                setYDirection(randomDerY);
         }
     }
 }
