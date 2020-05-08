@@ -44,10 +44,16 @@ public class Graphics extends Canvas implements Runnable {
         frame.setTitle(title);
         frame.add(this);
         frame.pack();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+                JOptionPane.showMessageDialog(null,"hej");
+            }
+        });
         this.addKeyListener(new MyKeyListener());
         this.addMouseListener(new MyMouseListener());
         this.requestFocus();
@@ -148,6 +154,44 @@ public class Graphics extends Canvas implements Runnable {
         }
 
 
+    }
+
+    private class WindowListner implements WindowListener{
+        @Override
+        public void windowOpened(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowClosing(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowClosed(WindowEvent windowEvent) {
+            System.exit(0);
+            JOptionPane.showMessageDialog(null,"hej");
+        }
+
+        @Override
+        public void windowIconified(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowDeiconified(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowActivated(WindowEvent windowEvent) {
+
+        }
+
+        @Override
+        public void windowDeactivated(WindowEvent windowEvent) {
+
+        }
     }
 
     private class MyMouseListener implements MouseListener {

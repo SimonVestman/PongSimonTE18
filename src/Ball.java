@@ -70,13 +70,13 @@ public class Ball {
     public void collision(Rectangle r) {
         if (boundingBox.intersects(r)) {
             if (getXDirection() > 0 && Math.abs(r.x - (boundingBox.x + boundingBox.width)) <= getXDirection()) {
-                setXDirection(-2);
+                setXDirection(-1);
             } else if (getXDirection() < 0 && Math.abs(r.x + r.width - boundingBox.x) <= -getXDirection()) {
-                setXDirection(+2);
+                setXDirection(+1);
             } else if (getYDirection() > 0 && Math.abs(r.y - (boundingBox.y + boundingBox.height)) <= getYDirection()) {
-                setYDirection(-2);
+                setYDirection(-1);
             } else if (getYDirection() < 0 && Math.abs(r.y + r.height - boundingBox.y) <= -getYDirection()) {
-                setYDirection(+2);
+                setYDirection(+1);
             }
         }
     }
@@ -105,8 +105,8 @@ public class Ball {
             JOptionPane.showMessageDialog(null, "PLAYER 1 SCORE:" + p1Score +
                     "\n" + "PLAYER 2 SCORE:" + p2Score);
         }
-        if (boundingBox.y <= 0) setYDirection(+2);
-        if (boundingBox.y >= 390) setYDirection(-2);
+        if (boundingBox.y <= 0) setYDirection(+1);
+        if (boundingBox.y >= 390) setYDirection(-1);
     }
 
 
@@ -134,10 +134,10 @@ public class Ball {
 
     public void keyReleased(KeyEvent keyEvent) {
 
-        int negativY = -2;
-        int positivY = +2;
-        int negativX = -2;
-        int positivX = +2;
+        int negativY = -1;
+        int positivY = +1;
+        int negativX = -1;
+        int positivX = +1;
 
         if (keyEvent.getKeyCode() == keyEvent.VK_SPACE) {
             int randomDerX = new Random().nextBoolean() ? negativX : positivX;
