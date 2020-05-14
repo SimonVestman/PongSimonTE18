@@ -7,8 +7,8 @@ public class Paddle2 {
     private int yDirection;
     private int[] pixels;
     private Rectangle boundingBox;
-    private int width = 8;
-    private int height = 65;
+    private int width = 6;
+    private int height = 58;
 
     public Paddle2(int x, int y, int col){
         boundingBox = new Rectangle(x, y, width, height);
@@ -61,8 +61,8 @@ public class Paddle2 {
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 335) {
-            boundingBox.y = 335;
+        if(boundingBox.y >= 342) {
+            boundingBox.y = 342;
         }
     }
 
