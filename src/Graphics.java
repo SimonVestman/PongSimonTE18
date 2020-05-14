@@ -50,8 +50,11 @@ public class Graphics extends Canvas implements Runnable {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent we) {
+                int player1score = Ball.p1Score;
+                int player2score = Ball.p2Score;
+                JOptionPane.showMessageDialog(null,"Player 1 score:" + player1score
+                        +"\n" + "Player 2 score:" + player2score);
                 System.exit(0);
-                JOptionPane.showMessageDialog(null,"hej");
             }
         });
         this.addKeyListener(new MyKeyListener());

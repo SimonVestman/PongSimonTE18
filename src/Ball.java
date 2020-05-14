@@ -10,8 +10,8 @@ public class Ball {
     private Rectangle boundingBox;
     private int height = 7;
     private int width = 7;
-    private int p1Score;
-    private int p2Score;
+    public static int p1Score;
+    public static int p2Score;
 
     public Ball(int x, int y) {
         pixels = new int[width * height];
