@@ -8,8 +8,8 @@ public class Ball {
     private double xDirection, yDirection;
     private int[] pixels;
     private Rectangle boundingBox;
-    private int height = 10;
-    private int width = 10;
+    private int height = 7;
+    private int width = 7;
     private int p1Score;
     private int p2Score;
 
