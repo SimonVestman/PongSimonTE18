@@ -8,7 +8,7 @@ public class Paddle {
     private int[] pixels;
     private Rectangle boundingBox;
     private int width = 6;
-    private int height = 58;
+    private int height = 48;
 
     public Paddle(int x, int y, int col){
         boundingBox = new Rectangle(x, y, width, height);
@@ -25,15 +25,17 @@ public class Paddle {
         if(e.getKeyChar() == 'w'){
             setYDirection(-3);
 
+            //Combacksystems
             if (p2score - p1score > 2){
-                setYDirection(-5);
+                setYDirection(-4);
             }
         }
         if(e.getKeyChar() == 's'){
             setYDirection(3);
 
+            //Combacksystem
             if (p2score - p1score > 2){
-                setYDirection(5);
+                setYDirection(4);
             }
         }
     }
@@ -72,8 +74,8 @@ public class Paddle {
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 342) {
-            boundingBox.y = 342;
+        if(boundingBox.y >= 352) {
+            boundingBox.y = 352;
         }
     }
 

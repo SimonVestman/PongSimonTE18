@@ -46,6 +46,7 @@ public class Graphics extends Canvas implements Runnable {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        frame.setBackground(Color.white);
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
