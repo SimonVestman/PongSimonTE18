@@ -19,11 +19,22 @@ public class Paddle2 {
         }
     }
     public void keyPressed(KeyEvent e){
+        int p1score = Ball.p1Score;
+        int p2score = Ball.p2Score;
         if(e.getKeyCode() == e.VK_UP){
             setYDirection(-3);
+
+            if (p1score - p2score > 2){
+                setYDirection(-5);
+            }
         }
         if(e.getKeyCode() == e.VK_DOWN){
             setYDirection(3);
+
+            if (p1score - p2score > 2){
+                setYDirection(5);
+            }
+
         }
     }
 

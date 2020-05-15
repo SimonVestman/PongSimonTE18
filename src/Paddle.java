@@ -20,11 +20,21 @@ public class Paddle {
     }
 
     public void keyPressed(KeyEvent e){
+        int p1score = Ball.p1Score;
+        int p2score = Ball.p2Score;
         if(e.getKeyChar() == 'w'){
             setYDirection(-3);
+
+            if (p2score - p1score > 2){
+                setYDirection(-5);
+            }
         }
         if(e.getKeyChar() == 's'){
             setYDirection(3);
+
+            if (p2score - p1score > 2){
+                setYDirection(5);
+            }
         }
     }
 

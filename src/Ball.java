@@ -15,15 +15,6 @@ public class Ball {
 
     public Ball(int x, int y) {
         pixels = new int[width * height];
-        /*for(int j = 0 ; j < height ; j++ ) {
-            for (int i = 0 ; i < width ; i++) {
-                if ((i-width/2)*(i-width/2) + (j-height/2)*(j-height/2) < width*width/4) {
-                    pixels[i] = 0xFFFFFFFF;
-                } else {
-                    pixels[i] = 0x00000000;
-                }
-            }
-        }*/
 
         for (int i = 0; i < pixels.length; i++)
             pixels[i] = 0xFFFFFFFF;
